@@ -94,3 +94,57 @@ window.addEventListener('scroll', () => {
 // Infinite Partner Scroll
 const track = document.querySelector('.partner-track');
 if (track) track.innerHTML += track.innerHTML;
+
+// =============================================
+// WORK GALLERY SCROLL & MODAL LOGIC
+// =============================================
+const workTrack = document.querySelector('.work-track');
+
+// 1. Duplicate items for infinite scroll (same as partners)
+if (workTrack) {
+    workTrack.innerHTML += workTrack.innerHTML;
+}
+
+// 2. Modal Click & Close Logic
+const modal = document.getElementById('workModal');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalStory = document.getElementById('modalStory');
+const closeBtn = document.querySelector('.work-modal-close');
+
+if (modal) {
+    // Add click listeners to each work item
+    document.querySelectorAll('.work-item').forEach(item => {
+        item.addEventListener('click', () => {
+            // Pull data from the clicked item's attributes
+            const imgSrc = item.getAttribute('data-img');
+            const title = item.getAttribute('data-title');
+            const story = item.getAttribute('data-story');
+            
+            // Populate and show the modal
+            modalImg.src = imgSrc;
+            modalTitle.innerText = title;
+            modalStory.innerText = story;
+            modal.classList.add('active');
+            
+            // Pause the scroll animation while modal is open
+            workTrack.style.animationPlayState = 'paused';
+        });
+    });
+
+    // Close modal when clicking the 'X'
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            workTrack.style.animationPlayState = 'running';
+        });
+    }
+
+    // Close modal if user clicks outside the content box
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            workTrack.style.animationPlayState = 'running';
+        }
+    });
+}
