@@ -99,7 +99,7 @@ nav { display: flex; justify-content: space-between; align-items: center; overfl
 
 /* --- Hero --- */
 .hero { position: relative; min-height: 95vh; padding-bottom: 100px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 50px; background-image: url('bg.jpg'); background-size: cover; background-position: center; filter: brightness(1.7) contrast(1.5); }
-.hero-about { position: relative; height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 50px; background-image: url('https://picsum.photos/seed/2m-valuer-hero-arch/1600/800'); background-size: cover; background-position: center; filter: brightness(1) contrast(1.5); }
+.hero-about { position: relative; height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 50px; background-image: url('bg.jpg'); background-size: cover; background-position: center; filter: brightness(1.7) contrast(1.5); }
 .hero-title { font-family: var(--font-heading); font-size: 70px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; margin-bottom: 100px; color: white; text-shadow: 0 4px 2px #523, 0 4px 2px #523, 0 3px 2px#523, 0 2px 2px #523, 0 4px 2px #523, 0px 1px 4px rgba(0, 0, 0, 0.7), 0 0 10px #222, 0 0 10px #222, 0 0 10px #222, 0 0 10px #222; filter: brightness(1); -webkit-font-smoothing: antialiased; }
 
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 15, 15, 0.8); z-index: 1; }
